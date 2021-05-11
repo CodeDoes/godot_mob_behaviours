@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "CohesionBehaviour",
+"language": "GDScript",
+"path": "res://unit/CohesionBehaviour.gd"
+}, {
+"base": "Reference",
+"class": "SeperationBehaviour",
+"language": "GDScript",
+"path": "res://unit/SeperationBehaviour.gd"
+} ]
+_global_script_class_icons={
+"CohesionBehaviour": "",
+"SeperationBehaviour": ""
+}
+
+[application]
+
+config/name="Mob"
+run/main_scene="res://map.tscn"
+config/icon="res://resources/icon.png"
+
+[autoload]
+
+UnitSpatialManager="*res://unit/UnitSpatialManager.tscn"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://resources/default_env.tres"
